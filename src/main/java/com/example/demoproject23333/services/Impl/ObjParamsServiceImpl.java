@@ -17,7 +17,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ObjParamsServiceImpl implements ObjParamsService {
+public class ObjParamsServiceImpl  {
     private final ObjParamsRepository objParamsRepository;
     private final ParamsRepository paramsRepository;
     private final ResponseRepository responseRepository;
@@ -25,9 +25,10 @@ public class ObjParamsServiceImpl implements ObjParamsService {
 
 
 
-    public Response saveResponseFromJson(ResponseDto responseDto) {
-        Response response = responseMapper.mapToResponse(responseDto);
+    public Response saveResponseFromJson(Response response) {
         return responseRepository.save(response);
+//        Response response = responseMapper.mapToResponse(responseDto);
+//        return responseRepository.save(response);
 
     }
 

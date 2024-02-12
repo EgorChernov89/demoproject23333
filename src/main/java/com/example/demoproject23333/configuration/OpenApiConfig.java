@@ -1,6 +1,7 @@
 package com.example.demoproject23333.configuration;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
@@ -24,12 +25,13 @@ import io.swagger.v3.oas.annotations.servers.Server;
         servers = @Server(url = "http://localhost:8096")
 )
 @SecurityScheme(
-        name = "токен",
+        name = "Bearer Authentication",
         description = "токен авторизации",
         paramName = "JWT",
         type = SecuritySchemeType.HTTP,
-        bearerFormat = "bearer",
-        scheme = "bearer"
+        bearerFormat = "JWT",
+        scheme = "bearer",
+        in = SecuritySchemeIn.HEADER
 )
 //http://localhost:8096/swagger-ui/index.html#/
 public class OpenApiConfig {

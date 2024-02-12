@@ -1,50 +1,61 @@
 package com.example.demoproject23333.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Data
 public class ParamsDto {
 
     @JsonProperty("CC.DevTime_Time")
-    private String cCDevTimeTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCDevTimeTime;
 
     @JsonProperty("CC.DevTime")
-    private String cCDevTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCDevTime;
 
     @JsonProperty("CC.Latitude_Time")
-    private String cCLatitudeTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCLatitudeTime;
 
     @JsonProperty("CC.Latitude")
     private String cCLatitude;
 
     @JsonProperty("CC.Longitude_Time")
-    private String cCLongitudeTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCLongitudeTime;
 
     @JsonProperty("CC.Longitude")
     private String cCLongitude;
 
     @JsonProperty("CC.Course_Time")
-    private String cCCourseTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCCourseTime;
 
     @JsonProperty("CC.Course")
     private String cCCourse;
 
     @JsonProperty("CC.Speed_Time")
-    private String cCSpeedTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCSpeedTime;
 
     @JsonProperty("CC.Speed")
     private String cCSpeed;
 
     @JsonProperty("CC.Status_Time")
-    private String cCStatusTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCStatusTime;
 
     @JsonProperty("CC.Status")
     private String cCStatus;
 
     @JsonProperty("CC.BU_Time")
-    private String cCBUTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime cCBUTime;
 
     @JsonProperty("CC.BU")
     private String ccBu;

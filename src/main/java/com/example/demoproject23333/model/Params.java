@@ -57,7 +57,7 @@ public class Params {
 	private String cCCourse;
 
 	@JsonProperty("CC.Speed_Time")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+	//@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
 	@Column(name = "cCSpeedTime")
 	private LocalDateTime speedTime;
 
