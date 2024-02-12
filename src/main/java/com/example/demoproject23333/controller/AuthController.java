@@ -1,6 +1,6 @@
 package com.example.demoproject23333.controller;
 
-import com.example.demoproject23333.services.AuthenticationService;
+import com.example.demoproject23333.services.Impl.AuthenticationServiceImpl;
 import com.example.demoproject23333.dto.JwtAuthenticationResponse;
 import com.example.demoproject23333.dto.SignInRequest;
 import com.example.demoproject23333.dto.SignUpRequest;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Tag(name = "Аутентификация")
 public class AuthController {
-    private final AuthenticationService authenticationService;
+    private final AuthenticationServiceImpl authenticationService;
 
     @Operation(summary = "Регистрация пользователя")
     @PostMapping("/sign-up")

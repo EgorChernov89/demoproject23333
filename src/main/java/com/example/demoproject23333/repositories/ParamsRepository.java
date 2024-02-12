@@ -10,5 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ParamsRepository extends JpaRepository<Params,Long> {
-    List<Params> findByObjIdAndTimeBetween(String deviceId, LocalDateTime startDate, LocalDateTime endDate);
+    List<Params> findBySpeedTimeBetween(LocalDateTime startTime, LocalDateTime endTime);
+
 }

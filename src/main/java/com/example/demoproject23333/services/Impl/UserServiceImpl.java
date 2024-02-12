@@ -1,4 +1,4 @@
-package com.example.demoproject23333.services;
+package com.example.demoproject23333.services.Impl;
 
 import com.example.demoproject23333.model.enums.Role;
 import com.example.demoproject23333.model.User;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public class UserServiceImpl {
     private final UserRepository repository;
 
     /**

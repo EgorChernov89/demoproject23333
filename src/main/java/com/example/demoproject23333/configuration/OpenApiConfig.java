@@ -11,13 +11,13 @@ import io.swagger.v3.oas.annotations.servers.Server;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "Титульник",
-                description = "Тест",
+                title = "Тестовое задание",
+                description = "Реализовать web¬приложение имитирующее сбор данных с устройств (трекер ADM50) и их преобразование.",
                 version = "3.0.0",
                 license = @License(name = "Apache 2.0", url = "http://foo.bar"),
                 contact = @Contact(
-                        name = "Егор",
-                        email = "a@a.ru",
+                        name = "Чернов Егор Константинович",
+                        email = "chernov.e.k89@gmail.com",
                         url = "www.w.ww"
                 )
         ),
