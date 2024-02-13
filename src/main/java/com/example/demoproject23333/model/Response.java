@@ -3,13 +3,14 @@ package com.example.demoproject23333.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+@Table (name = "response")
 public class Response {
 
 	@Id

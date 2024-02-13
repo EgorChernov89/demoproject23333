@@ -12,71 +12,74 @@ public class ParamsDto {
 
     @JsonProperty("CC.DevTime_Time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCDevTimeTime;
+    private LocalDateTime devTimeTime;
 
     @JsonProperty("CC.DevTime")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCDevTime;
+    private LocalDateTime devTime;
 
     @JsonProperty("CC.Latitude_Time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCLatitudeTime;
+    private LocalDateTime latitudeTime;
 
     @JsonProperty("CC.Latitude")
-    private String cCLatitude;
+    private String latitude;
 
     @JsonProperty("CC.Longitude_Time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCLongitudeTime;
+    private LocalDateTime longitudeTime;
 
     @JsonProperty("CC.Longitude")
-    private String cCLongitude;
+    private String longitude;
 
     @JsonProperty("CC.Course_Time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCCourseTime;
+    private LocalDateTime courseTime;
 
     @JsonProperty("CC.Course")
-    private String cCCourse;
+    private String course;
 
     @JsonProperty("CC.Speed_Time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCSpeedTime;
+    private LocalDateTime speedTime;
 
     @JsonProperty("CC.Speed")
-    private String cCSpeed;
+    private String speed;
 
     @JsonProperty("CC.Status_Time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCStatusTime;
+    private LocalDateTime statusTime;
 
     @JsonProperty("CC.Status")
-    private String cCStatus;
+    private String status;
 
     @JsonProperty("CC.BU_Time")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-    private LocalDateTime cCBUTime;
+    private LocalDateTime bUTime;
 
     @JsonProperty("CC.BU")
-    private String ccBu;
+    private String bu;
 
     @JsonProperty("CC.OUT_Time")
-    private String cCOUTTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime oUTTime;
 
     @JsonProperty("CC.OUT")
-    private String ccOut;
+    private String out;
 
     @JsonProperty("CC.T_Time")
-    private String cCTTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime tempTime;
 
     @JsonProperty("CC.T")
-    private String ccT;
+    private String temp;
 
     @JsonProperty("CC.BZ_Time")
-    private String cCBZTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    private LocalDateTime bZTime;
 
     @JsonProperty("CC.BZ")
-    private String ccBz;
+    private String bz;
 
 
 }

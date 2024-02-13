@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public class ObjParamsDto {
 
     @JsonProperty("objId")
-    private String objId;
+    private String objName;
 
     @JsonProperty("paramTime")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")

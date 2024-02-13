@@ -1,6 +1,7 @@
 package com.example.demoproject23333.controller;
 
 
+import com.example.demoproject23333.dto.utils.MapperResponse;
 import com.example.demoproject23333.model.Response;
 import com.example.demoproject23333.dto.ResponseDto;
 import com.example.demoproject23333.services.Impl.ObjParamsServiceImpl;
@@ -16,12 +17,15 @@ import org.springframework.web.bind.annotation.*;
 public class RestfullController {
 
     private final ObjParamsServiceImpl objParamsService;
+    private final MapperResponse mapperResponse;
 
 
 
     @PostMapping("/putRawParams")
-    public Response getRawParams(@RequestBody Response response){
-        return objParamsService.saveResponseFromJson(response);
+    public Response getRawParams(@RequestBody ResponseDto responseDto){
+        return objParamsService.saveResponseFromJson(mapperResponse.convertToEntity(responseDto));
+
+       // return objParamsService.saveResponseFromJson(response);
 
     }
 

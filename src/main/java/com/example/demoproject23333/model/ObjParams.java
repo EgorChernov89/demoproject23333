@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
@@ -12,17 +13,20 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@Table(name = "obj_params")
 public class ObjParams {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@JsonProperty("objId")
-	private String objId;
+	@Column(name = "objId")
+	private String objName;
 
 	@JsonProperty("paramTime")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+	@Column(name = "paramTime")
 	private LocalDateTime paramTime;
 
 	@JsonProperty("params")
