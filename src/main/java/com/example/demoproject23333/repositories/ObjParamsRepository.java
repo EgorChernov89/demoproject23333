@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ObjParamsRepository extends JpaRepository<ObjParams,Long> {
+    ObjParams findByObjName(String objName);
 }
