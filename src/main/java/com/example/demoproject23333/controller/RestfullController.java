@@ -25,8 +25,9 @@ public class RestfullController {
     public Response getRawParams(@RequestBody ResponseDto responseDto){
         return objParamsService.saveResponseFromJson(mapperResponse.convertToEntity(responseDto));
 
-       // return objParamsService.saveResponseFromJson(response);
-
-    }
+//        @GetMapping("/convertStatus")
+//        public String convertStatus(@RequestParam("status") String status) {
+//
+//    }
 
 }

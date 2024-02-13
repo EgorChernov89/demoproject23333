@@ -30,7 +30,8 @@ public class ObjParams {
 	private LocalDateTime paramTime;
 
 	@JsonProperty("params")
-	@OneToOne(mappedBy = "objParams")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "params_id", referencedColumnName = "id")
 	private Params params;
 	@ManyToOne
 	@JoinColumn(name = "response_id")
