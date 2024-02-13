@@ -16,7 +16,9 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -40,7 +42,8 @@ public class ObjParamsServiceImpl {
 
     public String convertStatus(String objName) {
         ObjParams objParam = objParamsRepository.findByObjName(objName);
-        StringBuilder statusText= new StringBuilder();;
+        StringBuilder statusText = new StringBuilder();
+        ;
         if (objParam != null && objParam.getParams() != null) {
             Params params = objParam.getParams();
             if (params.getStatus() != null) {
@@ -100,24 +103,34 @@ public class ObjParamsServiceImpl {
                 if (binaryStatus.charAt(15) == '1') {
                     statusText.append("Нажата кнопка тангенты; ");
                 }
-            }else {
+            } else {
                 statusText = new StringBuilder("отсутствие данных о устройстве");
 
+            }
         }
-    } return statusText.toString().trim();
-}
-}
+        return statusText.toString().trim();
+    }
 
-//    public double calculateAverageSpeed(LocalDateTime startDate, LocalDateTime endDate) {
-//        List<Params> paramsList = paramsRepository.findBySpeedTimeBetween(startDate, endDate);
-//        if (paramsList.isEmpty()) {
-//            return 0.0; // Возвращаем 0, если данных нет
-//        }
-//
-//        // Вычисляем среднюю скорость
-//        double totalSpeed = paramsList.stream()
-//                .mapToDouble(params -> Double.parseDouble(params.getSpeed()))
-//                .sum();
-//
-//        return totalSpeed / paramsList.size();
-//    }
+
+    public double calculateAverageSpeed(String objName, LocalDate startDate, LocalDate endDate) {
+        ObjParams objParam = objParamsRepository.findByObjName(objName);
+        if (objParam == null || objParam.getParams() == null) {
+            return 0.0; // Возвращаем 0, если данных нет
+        }
+        LocalDateTime startDateTime = startDate.atStartOfDay();
+        LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);
+
+        List<Params> paramsList = paramsRepository.findByObjParamsAndSpeedTimeBetween(objParam, startDateTime, endDateTime);
+        if (paramsList.isEmpty()) {
+            return 0.0; // Возвращаем 0, если данных нет
+        }
+
+        // Вычисляем среднюю скорость
+        double totalSpeed = paramsList.stream()
+                .filter(params -> params.getSpeed() != null && !params.getSpeed().isEmpty())
+                .mapToDouble(params -> Double.parseDouble(params.getSpeed()))
+                .sum();
+
+        return totalSpeed / paramsList.size();
+    }
+}

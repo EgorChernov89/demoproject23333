@@ -10,9 +10,13 @@ import com.example.demoproject23333.services.Impl.ObjParamsServiceImpl;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/rest/v2")
@@ -34,6 +38,12 @@ public class RestfullController {
     public ResponseEntity<String> convertStatus(@RequestParam String objName) {
         String statusText = objParamsService.convertStatus(objName);
         return ResponseEntity.ok(statusText);
+    }
+
+    @GetMapping("/calculateAverageSpeed")
+    public double calculateAverageSpeed(@RequestParam String objName, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
+                                        @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
+        return objParamsService.calculateAverageSpeed(objName, startDate, endDate);
     }
 
 }
