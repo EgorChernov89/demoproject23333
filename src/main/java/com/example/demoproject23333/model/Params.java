@@ -1,6 +1,7 @@
 package com.example.demoproject23333.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -111,7 +112,8 @@ public class Params {
 	@Column(name = "bz")
 	private String bz;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@JoinColumn(name = "obj_params_id")
+	@JsonIgnore
 	private ObjParams objParams;
 }

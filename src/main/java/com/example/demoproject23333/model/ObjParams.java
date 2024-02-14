@@ -1,11 +1,11 @@
 package com.example.demoproject23333.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -30,10 +30,11 @@ public class ObjParams {
 	private LocalDateTime paramTime;
 
 	@JsonProperty("params")
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "params_id", referencedColumnName = "id")
 	private Params params;
 	@ManyToOne
 	@JoinColumn(name = "response_id")
+	@JsonIgnore
 	private Response response;
 }
