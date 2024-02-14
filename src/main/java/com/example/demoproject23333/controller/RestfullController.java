@@ -1,9 +1,7 @@
 package com.example.demoproject23333.controller;
 
 
-import com.example.demoproject23333.dto.utils.MapperResponse;
-import com.example.demoproject23333.model.ObjParams;
-import com.example.demoproject23333.model.Params;
+import com.example.demoproject23333.dto.mapper.MapperResponse;
 import com.example.demoproject23333.model.Response;
 import com.example.demoproject23333.dto.ResponseDto;
 import com.example.demoproject23333.services.Impl.ObjParamsServiceImpl;
@@ -11,12 +9,10 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/rest/v2")

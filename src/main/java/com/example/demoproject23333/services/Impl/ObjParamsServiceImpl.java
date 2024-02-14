@@ -1,17 +1,13 @@
 package com.example.demoproject23333.services.Impl;
 
 
-import com.example.demoproject23333.dto.ParamsDto;
-import com.example.demoproject23333.dto.ResponseDto;
-import com.example.demoproject23333.dto.mapper.ResponseMapper;
-import com.example.demoproject23333.dto.utils.MapperResponse;
+import com.example.demoproject23333.dto.mapper.MapperResponse;
 import com.example.demoproject23333.model.ObjParams;
 import com.example.demoproject23333.model.Params;
 import com.example.demoproject23333.model.Response;
 import com.example.demoproject23333.repositories.ObjParamsRepository;
 import com.example.demoproject23333.repositories.ParamsRepository;
 import com.example.demoproject23333.repositories.ResponseRepository;
-import com.example.demoproject23333.services.ObjParamsService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

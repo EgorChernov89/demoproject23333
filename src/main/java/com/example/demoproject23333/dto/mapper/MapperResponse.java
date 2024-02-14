@@ -1,4 +1,4 @@
-package com.example.demoproject23333.dto.utils;
+package com.example.demoproject23333.dto.mapper;
 
 import com.example.demoproject23333.dto.ResponseDto;
 import com.example.demoproject23333.model.Response;
