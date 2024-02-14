@@ -1,7 +1,7 @@
 package com.example.demoproject23333.services.Impl;
 
 
-import com.example.demoproject23333.dto.mapper.MapperResponse;
+
 import com.example.demoproject23333.model.ObjParams;
 import com.example.demoproject23333.model.Params;
 import com.example.demoproject23333.model.Response;
@@ -9,7 +9,7 @@ import com.example.demoproject23333.repositories.ObjParamsRepository;
 import com.example.demoproject23333.repositories.ParamsRepository;
 import com.example.demoproject23333.repositories.ResponseRepository;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
+
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -24,8 +24,7 @@ public class ObjParamsServiceImpl {
     private final ObjParamsRepository objParamsRepository;
     private final ParamsRepository paramsRepository;
     private final ResponseRepository responseRepository;
-    private final MapperResponse mapperResponse;
-    private final ModelMapper modelMapper;
+
 
 
     public Response saveResponseFromJson(Response response) {
@@ -40,12 +39,12 @@ public class ObjParamsServiceImpl {
         List<ObjParams> objParamsList = objParamsRepository.findByObjName(objName);
         StringBuilder statusText = new StringBuilder();
 
-        Optional<ObjParams> firstObjParamsWithParams = objParamsList.stream()
+        Optional<ObjParams> ObjParamsWithParams = objParamsList.stream()
                 .filter(objParam -> objParam.getParams() != null)
                 .reduce((e1, e2) -> e2);
 
-        if (firstObjParamsWithParams.isPresent()) {
-            Params params = firstObjParamsWithParams.get().getParams();
+        if (ObjParamsWithParams.isPresent()) {
+            Params params = ObjParamsWithParams.get().getParams();
             String hexValue = params.getStatus();
             int intValue = Integer.parseInt(hexValue.substring(2), 16);
             String binaryString = String.format("%16s", Integer.toBinaryString(intValue)).replace(' ', '0');
