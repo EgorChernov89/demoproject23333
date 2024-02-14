@@ -22,93 +22,93 @@ public class Params {
 
 	@JsonProperty("CC.DevTime_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCDevTimeTime")
+	@Column(name = "devTimeTime")
 	private LocalDateTime devTimeTime;
 
 	@JsonProperty("CC.DevTime")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCDevTime")
+	@Column(name = "devTime")
 	private LocalDateTime devTime;
 
 	@JsonProperty("CC.Latitude_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCLatitudeTime")
+	@Column(name = "latitudeTime")
 	private LocalDateTime latitudeTime;
 
 	@JsonProperty("CC.Latitude")
-	@Column(name = "cCLatitude")
+	@Column(name = "latitude")
 	private String latitude;
 
 	@JsonProperty("CC.Longitude_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCLongitudeTime")
+	@Column(name = "longitudeTime")
 	private LocalDateTime longitudeTime;
 
 	@JsonProperty("CC.Longitude")
-	@Column(name = "cCLongitude")
+	@Column(name = "longitude")
 	private String longitude;
 
 	@JsonProperty("CC.Course_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCCourseTime")
+	@Column(name = "courseTime")
 	private LocalDateTime courseTime;
 
 	@JsonProperty("CC.Course")
-	@Column(name = "cCCourse")
+	@Column(name = "course")
 	private String course;
 
 	@JsonProperty("CC.Speed_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCSpeedTime")
+	@Column(name = "speedTime")
 	private LocalDateTime speedTime;
 
 	@JsonProperty("CC.Speed")
-	@Column(name = "cCSpeed")
+	@Column(name = "speed")
 	private String speed;
 
 	@JsonProperty("CC.Status_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCStatusTime")
+	@Column(name = "statusTime")
 	private LocalDateTime statusTime;
 
 	@JsonProperty("CC.Status")
-	@Column(name = "cCStatus")
+	@Column(name = "status")
 	private String status;
 
 	@JsonProperty("CC.BU_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCBUTime")
+	@Column(name = "bUTime")
 	private LocalDateTime bUTime;
 
 	@JsonProperty("CC.BU")
-	@Column(name = "ccBu")
+	@Column(name = "bu")
 	private String bu;
 
 	@JsonProperty("CC.OUT_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCOUTTime")
+	@Column(name = "oUTTime")
 	private LocalDateTime oUTTime;
 
 	@JsonProperty("CC.OUT")
-	@Column(name = "ccOut")
+	@Column(name = "out")
 	private String out;
 
 	@JsonProperty("CC.T_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCTTime")
+	@Column(name = "tempTime")
 	private LocalDateTime tempTime;
 
 	@JsonProperty("CC.T")
-	@Column(name = "ccT")
+	@Column(name = "temp")
 	private String temp;
 
 	@JsonProperty("CC.BZ_Time")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
-	@Column(name = "cCBZTime")
+	@Column(name = "bZTime")
 	private LocalDateTime bZTime;
 
 	@JsonProperty("CC.BZ")
-	@Column(name = "ccBz")
+	@Column(name = "bz")
 	private String bz;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
